@@ -1,0 +1,24 @@
+<launch>
+    <param name="/use_sim_time" value="true" />
+
+    <node name="gazebo" pkg="gazebo_ros" type="gazebo"
+     args="$(find turtlebot3_gazebo)/worlds/empty.world" respawn="false" output="screen" />
+
+
+    <!--node name="gazebo_gui" pkg="gazebo" type="gui" respawn="false" output="screen" /-->
+
+    <include file="$(find multi_robot_tf)/launch/robots.launch"/>
+
+
+    <!-- <node pkg="multi_robot_tf" type="robot_tf_broadcaster"
+          args="/robot1" name="robot1_tf_broadcaster" />
+    <node pkg="multi_robot_tf" type="robot_tf_broadcaster"
+          args="/robot2" name="robot2_tf_broadcaster" />
+
+    <node pkg="multi_robot_tf" type="robot_tf_listener"
+          name="listener" /> -->
+
+    <!-- <node name="multiple_broadcaster" pkg="multi_robot_tf" type="multiple_broadcaster.py" />
+    <node name="model1_to_model2_listener" pkg="multi_robot_tf" type="model1_to_model2_listener.py" /> -->
+
+</launch> 
